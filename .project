@@ -3,6 +3,7 @@
 	<name>ServicioWebArSo</name>
 	<comment></comment>
 	<projects>
+		<project>ProyectoArSo</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -19,6 +19,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
@@ -86,7 +87,7 @@ public class controladorREST {
 	@GET
 	@Path("/{id}/filtro")
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-	public Response getProgramaFiltrado(@PathParam("id") String id, @FormParam("titulo") String titulo) {
+	public Response getProgramaFiltrado(@PathParam("id") String id, @QueryParam("titulo") String titulo) {
 		try {
 			return Response.status(Response.Status.OK).entity(controlador.getProgramaFiltrado(id, titulo)).build();
 		} catch (Exception e) {
@@ -102,7 +103,7 @@ public class controladorREST {
 			String id = controlador.crearFavoritos();
 
 			UriBuilder builder = uriInfo.getAbsolutePathBuilder();
-			builder.path(controlador.getPathFavoritos(id));
+			builder.path(id);
 
 			return Response.created(builder.build()).build();
 		} catch (JAXBException e) {
