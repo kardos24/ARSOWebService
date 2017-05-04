@@ -41,8 +41,8 @@ import ejercicio4.AnalizadorDOM;
 import modelo.Favoritos;
 import modelo.ListadoProgramas;
 import servicio.controlador.ServicioALaCarta;
-import servicio.tipos.TipoEmision;
-import servicio.tipos.TipoPrograma;
+import servicio.tipos.Emision;
+import servicio.tipos.Programa;
 import servicio.utilidades.Utilidades;
 
 @Path("programas")
