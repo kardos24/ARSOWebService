@@ -21,7 +21,7 @@ import javax.xml.bind.JAXBException;
 import servicio.controlador.ServicioALaCarta;
 
 @Path("programas")
-public class controladorREST {
+public class ControladorREST {
 
 	@Context
 	private UriInfo uriInfo;
