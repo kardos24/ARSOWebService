@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/jquery.mobile-1.4.5.min.css">
+<script src="assets/js/jquery-1.12.4.min.js"></script>
+<script src="assets/js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<!-- http://marcogallen.com/blog/programacion/3-pasos-para-una-lista-de-jquery-mobile-desde-json/ -->
+	<div data-role="page" id="listado">
+		<div data-role="header">
+			<h1>Programas de RTVE</h1>
+		</div>
+		<div data-role="content">
+			<!-- LISTA -->
+			<ul data-role="listview">
+				<li><a href="#programa">Programa 1</a></li>
+				<li><a href="#programa">Programa 2</a></li>
+			</ul>
+		</div>
+		<div data-role="footer">
+			<div style="text-align: center;">
+				<p>Arquitectura del Software 2016/17</p>
+				<p>Hecho por Daniel Cardos Martínez y Luis Marín Martínez</p>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="programa">
+		<div data-role="header">
+			<a href="#listado" data-icon="back">Listado</a>
+			<h1>PROGRAMA</h1>
+		</div>
+		<div data-role="content">
+			<a href="http://www.rtve.es/" data-role="button" data-icon="home">Ver
+				en RTVE</a>
+			<div style="text-align: center;">
+				<img src="assets/img/test.jpg" alt="image" />
+			</div>
+			<a href="#emisiones" data-role="button">Emisiones</a>
+		</div>
+		<div data-role="footer">
+			<div style="text-align: center;">
+				<p>Arquitectura del Software 2016/17</p>
+				<p>Hecho por Daniel Cardos Martínez y Luis Marín Martínez</p>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="emisiones">
+		<div data-role="header">
+			<a href="#programa" data-icon="back">Atrás</a>
+			<h1>Emisiones de...</h1>
+		</div>
+		<div data-role="content">
+			<!-- LISTA -->
+			<ul data-role="listview">
+				<li><a href="http://www.rtve.es/">Emisión 1</a></li>
+				<li><a href="http://www.rtve.es/">Emisión 2</a></li>
+			</ul>
+		</div>
+		<div data-role="footer">
+			<div style="text-align: center;">
+				<p>Arquitectura del Software 2016/17</p>
+				<p>Hecho por Daniel Cardos Martínez y Luis Marín Martínez</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
