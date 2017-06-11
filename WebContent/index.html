@@ -14,9 +14,7 @@
 		</div>
 		<div data-role="content">
 			<!-- LISTA -->
-			<ul data-role="listview">
-				<li><a href="#programa">Programa 1</a></li>
-				<li><a href="#programa">Programa 2</a></li>
+			<ul data-role="listview" id="listProgram">
 			</ul>
 		</div>
 		<div data-role="footer">
@@ -30,7 +28,7 @@
 	<div data-role="page" id="programa">
 		<div data-role="header">
 			<a href="#listado" data-icon="back">Listado</a>
-			<h1>PROGRAMA</h1>
+			<h1 id="titleProgram">PROGRAMA</h1>
 		</div>
 		<div data-role="content">
 			<a href="http://www.rtve.es/" data-role="button" data-icon="home">Ver
@@ -67,5 +65,32 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+		var selectedProgram;
+		$(document).on(
+				"pagebeforecreate",
+				"#listado",
+				function() {
+					$.getJSON(
+							'/ServicioWebArSo/rest/programas',
+							null,
+							function(data) {
+								$.each(data.programList, function(i, item) {
+									$("#listProgram")
+											.append(
+													"<li><a class='programaClass' id=#"+item.id+" href='#programa'>"
+															+ item.titulo
+															+ "</a></li>")
+											.listview("refresh");
+								});
+							}).done(function() {
+						$(".programaClass").bind("click", function() {
+							selectedProgram = $(this).attr("id");
+							$("#titleProgram").text($(this).val());
+						})
+					});
+				})
+	</script>
 </body>
 </html>
